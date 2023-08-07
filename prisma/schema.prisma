@@ -28,13 +28,12 @@ model Memory {
   id          Int      @id @default(autoincrement())
   location    String
   date        String
-  description String
-  tags        String[]
-  images      String[]
-
+  description String?
   // relation
-  userId Int
-  user   User @relation(fields: [userId], references: [id])
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+  images      String[]
+  tags        String[]
 
   @@map("memories")
 }

@@ -6,14 +6,26 @@ import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { MemoryController } from './memory/memory.controller';
+import { MemoryModule } from './memory/memory.module';
+import { MemoryService } from './memory/memory.service';
 
 @Module({
-  imports: [AuthModule, PrismaModule],
-  controllers: [
-    AppController,
-    UserController,
-    AuthController,
+  imports: [
+    AuthModule,
+    PrismaModule,
+    MemoryModule,
   ],
-  providers: [AppService, AuthService],
+  // controllers: [
+  //   AppController,
+  //   UserController,
+  //   AuthController,
+  //   MemoryController,
+  // ],
+  // providers: [
+  //   AppService,
+  //   AuthService,
+  //   MemoryService,
+  // ],
 })
 export class AppModule {}
